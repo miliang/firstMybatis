@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="com.dao.IUsersDao">
+	<!-- 为数据库的列名取别名，跟bean对象属性名保持一致
+	id为这个resultMap的唯一标识，type为映射的bean对象
+	 -->
+	<resultMap type="com.pojo.User" id="resultUser">
+		<result property="name" column="t_name" />
+		<result property="age" column="t_age" />
+		<result property="money" column="t_meoney" />
+	</resultMap>
+		<select id="listUsers" resultMap="resultUser">
+		SELECT * FROM user
+	</select>
+	</mapper>

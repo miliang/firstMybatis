@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper    
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.IUserDao">
+<!-- 为数据库的列名取别名，跟bean对象属性名保持一致
+	id为这个resultMap的唯一标识，type为映射的bean对象
+	 -->
+	<resultMap type="com.pojo.User" id="resultU">
+		<result property="name" column="t_name" />
+		<result property="age" column="t_age" />
+		<result property="money" column="t_meoney" />
+	</resultMap>
+	
+	<select id="selectAllUser" resultMap="resultU">
+		SELECT * FROM user
+	</select>
+	 <insert id="insertUser">
+	 	INSERT INTO user(t_name,t_age,t_money) VALUES
+	 	(#{name},#{age},#{money})
+	</insert>
+	<delete id="DeleteUser">
+		DELETE FROM user WHERE t_name = #{name} and t_age = #{age}
+	</delete>
+	<update id="updateUser">
+		UPDATE user SET t_name = #{name} where t_name = #{name}
+	</update>
+</mapper>
