@@ -30,11 +30,11 @@ public class Test {
 		User user = iUserDao.selectAllUser();
 	
 		System.out.println(user);*/
-//		IUsersDao iUsersDao = session.getMapper(IUsersDao.class);
-//		List<User> list = iUsersDao.listUsers();
-//		for(User u : list) {
-//			System.out.println(u);
-//		}
+		IUsersDao iUsersDao = session.getMapper(IUsersDao.class);
+		List<User> list = iUsersDao.listUsers();
+		for(User u : list) {
+			System.out.println(u);
+		}
 		//ÃÌº”
 //		User user = new User("–°’≈",20,5000);
 //		IUserDao iUserDao = session.getMapper(IUserDao.class);
